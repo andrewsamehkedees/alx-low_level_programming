@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*the main functions with int as return type*/
+/*the main functions with int as return type and prints using puts function*/
 int main(void)
 {
 /*printing using puts*/

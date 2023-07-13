@@ -2,7 +2,7 @@
 /**
  * main method with print 
  *
- * return 0 after finish
+ * Return: always return 0
  */
 int main(void)
 {

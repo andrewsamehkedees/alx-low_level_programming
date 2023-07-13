@@ -1,5 +1,9 @@
 #include <stdio.h>
-/*main function*/
+
+/**
+ * contain main class
+ * gonna return zero when it done
+ */
 int main(void)
 {
     puts("\"Programming is like building a multilingual puzzle");

@@ -1,8 +1,8 @@
 #include<stdio.h>
 /**
-* main - Entry point
+* main - using printf to print the sizes
 *
-* Return: Always 0 (Success)
+* Return: Always return after finished 0
 */
 int main(void)
 {

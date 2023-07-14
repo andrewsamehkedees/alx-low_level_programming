@@ -4,7 +4,6 @@
  * main - print combinations of two digits
  * Return: ALways return 0
  */
-
 int main(void)
 {
     int i, j;

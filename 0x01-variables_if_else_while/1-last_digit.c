@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - print the last digit of the number and check if it is greater than 5 or less than 6 or equal zero
+ * main - print the last digit of the number and check if 
+ * it is greater than 5 or less than 6 or equal zero
  *
  * Return: Always return 0 after finished
  */

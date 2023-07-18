@@ -28,7 +28,8 @@ int main(void)
 
 	for (i = 92; i < 99; i++)
 	{
-		printf(", %lu%lu", a1 + (a2 / l), a2 % l);
+		printf(", %lu", a1 + (a2 / l));
+		printf("%lu", a2 %l);
 		a1 = a1 + b1;
 		b1 = a1 - b1;
 		a2 = a2 + b2;

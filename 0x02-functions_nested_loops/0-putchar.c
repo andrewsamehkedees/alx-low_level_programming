@@ -5,6 +5,7 @@
  *
  * Return - return 0 after finished
  */
+
 int main(void)
 {
 	_putchar('_');

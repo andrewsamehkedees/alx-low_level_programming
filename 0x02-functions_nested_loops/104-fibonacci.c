@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	unsigned long int a = 2, b = 1
+	unsigned long int a = 2, b = 1;
 	unsigned long int l = 1000000000;
 	unsigned long int a1, a2, b1, b2;
 
@@ -17,7 +17,7 @@ int main(void)
 	{
 		printf(", %lu", a);
 		a += b;
-		b = a - b
+		b = a - b;
 		
 	}
 

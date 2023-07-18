@@ -8,17 +8,17 @@
 int main(void)
 {
 	int i;
-	unsigned long int a = 1, b = 2, sum;
+	unsigned long int a = 2, b = 1
 	unsigned long int l = 1000000000;
 	unsigned long int a1, a2, b1, b2;
 
-	printf("%lu, %lu", a, b);
-	for (i = 3; i <= 91; i++)
+	printf("%lu", b);
+	for (i = 1; i <= 91; i++)
 	{
-		sum = a + b;
-		printf(", %lu", sum);
-		a = b;
-		b = sum;
+		printf(", %lu", a);
+		a += b;
+		b = a - b
+		
 	}
 
 	a1 = a / l;

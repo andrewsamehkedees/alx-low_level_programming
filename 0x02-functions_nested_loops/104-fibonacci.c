@@ -28,18 +28,11 @@ int main(void)
 
 	for (i = 92; i <= 98; i++)
 	{
-		printf(", %lu%lu", b1 + (b2 / l), b2 % l);
-		sum = a1 + b1;
-		b1 += a1;
-		a1 = sum;
-		sum = a2 + b2;
-		if (sum >= l)
-		{
-			sum -= l;
-			b1++;
-		}
-		b2 = sum;
-		a2 = sum;
+		printf(", %lu%lu", a1 + (a2 / l), a2 % l);
+		a1 = a1 + b1;
+		b1 = a1 - b1;
+		a2 = a2 + b2;
+		b2 = a2 - b2;
 	}
 	printf("\n");
 	return (0);

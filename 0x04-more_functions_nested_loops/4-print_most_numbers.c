@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_most_numbers - prints the numbers
  * except for 2 and 4

@@ -1,6 +1,7 @@
 /**
  * print_most_numbers - prints the numbers
  * except for 2 and 4
+ * return: void
  */
 void print_most_numbers(void)
 {

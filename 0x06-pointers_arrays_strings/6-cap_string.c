@@ -9,14 +9,22 @@
 char *cap_string(char *s)
 {
 	int i;
+	int cap_next = 1;
 
-	if (s[0] >= 'a' && s[0] <= 'z')
-		s[0] = s[0] - 'a' + 'A';
-
-	for (i = 1; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i - 1] == ' ' && (s[i] >= 'a' && s[i] <= 'z'))
+		if (cap_next && s[i] >= 'a' && s[i] <= 'z')
+		{
 			s[i] = s[i] - 'a' + 'A';
+			cap_next = 0;
+		}
+		else if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ',' 
+				|| s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?' 
+				|| s[i] == '"' || s[i] == '(' || s[i] == ')' || s[i] == '{' 
+				|| s[i] == '}')
+			cap_next = 1;
+		else
+			cap_next = 0;
 	}
 
 	return (s);

@@ -17,8 +17,10 @@ char *leet(char *s)
 		for (j = 0; letters[j] != '\0'; j++)
 		{
 			if (s[i] == letters[j])
+			{
 				s[i] = numbers[j];
 				break;
+			}
 		}
 	}
 

@@ -29,7 +29,7 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * is_palindrome - function to check if s is a palindrome
+ * is_pal - function to check if s is a palindrome
  * @s: the string to check
  * @start: the start index
  * @end: the end index

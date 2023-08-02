@@ -1,7 +1,7 @@
 #include "main.h"
 
 int _strlen_recursion(char *s);
-int is_palindrome(char *s, int start, int end);
+int is_pal(char *s, int start, int end);
 
 /**
  * is_palindrome - returns 1 or 0
@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
 
-	return (is_palindrome(s, 0, len - 1));
+	return (is_pal(s, 0, len - 1));
 }
 
 /**
@@ -35,12 +35,12 @@ int _strlen_recursion(char *s)
  * @end: the end index
  * Return: int
  */
-int is_palindrome(char *s, int start, int end)
+int is_pal(char *s, int start, int end)
 {
 	if (start >= end)
 		return (1);
 	else if (s[start] != s[end])
 		return (0);
 	else
-		return (is_palindrome(s, start + 1, end - 1));
+		return (is_pal(s, start + 1, end - 1));
 }

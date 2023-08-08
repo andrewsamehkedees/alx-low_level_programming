@@ -1,41 +1,45 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
  * strtow - Splits a string into words
  * @str: The string
- * Return: A pointer to an array
+ * Return: A pointer or NULL
  */
 char **strtow(char *str)
 {
-	char **tab;
-	int i, j, k, l, count = 0;
+    char **tab;
+    int i, j, k, l, wc = 0, len;
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
-	for (i = 0; str[i]; i++)
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-			count++;
-	tab = malloc(sizeof(char *) * (count + 1));
-	if (tab == NULL)
-		return (NULL);
-	for (i = 0, j = 0; str[i]; i++)
-		if (str[i] != ' ')
-		{
-			for (k = i; str[k] != ' ' && str[k]; k++)
-				;
-			tab[j] = malloc(k - i + 1);
-			if (tab[j] == NULL)
-			{
-				for (k = 0; k < j; k++)
-					free(tab[k]);
-				free(tab);
-				return (NULL);
-			}
-			for (l = 0; i < k; i++, l++)
-				tab[j][l] = str[i];
-			tab[j++][l] = '\0';
-		}
-	tab[j] = NULL;
-	return (tab);
+    if (str == NULL || str[0] == '\0')
+        return (NULL);
+    for (i = 0; str[i]; i++)
+        if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+            wc++;
+    tab = malloc(sizeof(char *) * (wc + 1));
+    if (tab == NULL)
+        return (NULL);
+    for (i = 0, j = 0; j < wc; j++)
+    {
+        while (str[i] == ' ')
+            i++;
+        for (k = i; str[k] && str[k] != ' '; k++)
+            ;
+        len = k - i;
+        tab[j] = malloc(sizeof(char) * (len + 1));
+        if (tab[j] == NULL)
+        {
+            for (k = 0; k < j; k++)
+                free(tab[k]);
+            free(tab);
+            return (NULL);
+        }
+        for (l = 0; l < len; l++)
+            tab[j][l] = str[i + l];
+        tab[j][l] = '\0';
+        i += len;
+    }
+    tab[j] = NULL;
+    return (tab);
 }

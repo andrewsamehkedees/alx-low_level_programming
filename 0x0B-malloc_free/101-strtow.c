@@ -31,26 +31,19 @@ char **strtow(char *str)
 	{
 		while (str[i] == ' ')
 			i++;
-
 		for (k = i; str[k] && str[k] != ' '; k++)
 			;
-
 		len = k - i;
-
 		tab[j] = malloc(sizeof(char) * (len + 1));
-
 		if (tab[j] == NULL)
 		{
 			for (k = 0; k < j; k++)
 				free(tab[k]);
-
 			free(tab);
 			return (NULL);
 		}
-
 		for (l = 0; l < len; l++)
 			tab[j][l] = str[i + l];
-
 		tab[j][l] = '\0';
 		i += len;
 	}

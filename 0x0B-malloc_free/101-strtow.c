@@ -36,7 +36,7 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
-	len1 = word_count(str);
+	len1 = word_counter(str);
 	if (len1 == 0)
 		return (NULL);
 
@@ -46,7 +46,7 @@ char **strtow(char *str)
 
 	for (i = 0, k = 0; i < len1; i++)
 	{
-		if (str[i] != ' ' && str[i] != NULL)
+		if (str[i] != ' ' && str[i] != '\0')
 		{
 			for (j = i, len2 = 0; str[j] && str[j] != ' '; j++)
 			{

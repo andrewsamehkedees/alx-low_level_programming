@@ -61,7 +61,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			for (j = i, len2 = 0; str[j] && str[j] != ' '; j++, len2++)
-				words[k][len2] = str[j];
+				words[k][len2 - 1] = str[j];
 			words[k][len2] = '\0';
 			k++;
 		}

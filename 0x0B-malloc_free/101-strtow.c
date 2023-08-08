@@ -44,26 +44,26 @@ char **strtow(char *str)
 	if (words == NULL)
 		return (NULL);
 
-	for (i = 0, k = 0; i < len1; i++)
+	for (i = 0, k = 0; i < len1; k++)
 	{
-		if (str[i] != ' ' && str[i] != '\0')
+		if (str[k] != ' ' && str[k] != '\0')
 		{
-			for (j = i, len2 = 0; str[j] && str[j] != ' '; j++)
+			for (j = k, len2 = 0; str[j] && str[j] != ' '; j++)
 			{
 				len2++;
 			}
-			words[k] = malloc(sizeof(char) * (len2 + 1));
-			if (words[k] == NULL)
+			words[i] = malloc(sizeof(char) * (len2 + 1));
+			if (words[i] == NULL)
 			{
-				while (--k >= 0)
-					free(words[k]);
+				while (--i >= 0)
+					free(words[i]);
 				free(words);
 				return (NULL);
 			}
-			for (j = i, len2 = 0; str[j] && str[j] != ' '; j++, len2++)
-                		words[k][len2] = str[j];
-			words[k][len2] = '\0';
-			k++;
+			for (j = k, len2 = 0; str[j] && str[j] != ' '; j++, len2++)
+                		words[i][len2] = str[j];
+			words[i][len2] = '\0';
+			i++;
 		}
 	}
 	words[i] = NULL;

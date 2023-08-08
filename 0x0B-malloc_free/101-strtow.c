@@ -47,7 +47,6 @@ char **strtow(char *str)
 		tab[j][l] = '\0';
 		i += len;
 	}
-
 	tab[j] = NULL;
 	return (tab);
 }

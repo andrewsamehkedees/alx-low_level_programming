@@ -46,7 +46,7 @@ char **strtow(char *str)
 
 	for (i = 0, k = 0; i < len1; i++)
 	{
-		if (str[i] != ' ' && str[i] != '\0')
+		if (str[i] != ' ' || i == 0)
 		{
 			for (j = i, len2 = 0; str[j] && str[j] != ' '; j++)
 			{

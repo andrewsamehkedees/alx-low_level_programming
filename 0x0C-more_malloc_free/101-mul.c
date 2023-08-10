@@ -9,7 +9,8 @@
  */
 int main(int argc, char **argv)
 {
-	unsigned long num1, num2, result;
+	unsigned long num1, num2;
+       	char *result;
 	int i;
 
 	if (argc != 3)
@@ -36,9 +37,8 @@ int main(int argc, char **argv)
 
 	num2 = atol(argv[2]);
 
-	result = num1 * num2;
-
-	printf("%ld\n", result);
-
+	result = num1 * num2
+	while (*result)
+		putchar(*result++);
 	return (0);
 }

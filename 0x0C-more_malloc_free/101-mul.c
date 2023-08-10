@@ -17,9 +17,9 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	num1 = strtoul(argv[1], NULL, 10);
+	num1 = atol(argv[1]);
 
-	num2 = strtoul(argv[2], NULL, 10);
+	num2 = atol(argv[2]);
 
 	result = num1 * num2;
 

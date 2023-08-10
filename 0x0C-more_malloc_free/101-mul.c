@@ -9,7 +9,8 @@
  */
 int main(int argc, char **argv)
 {
-	unsigned long num1, num2, result;
+	long num1, num2, result;
+	int i;
 
 	if (argc != 3)
 	{
@@ -17,13 +18,27 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
+	for (i = 0; argv[1][i]; i++)
+		if (argv[1][i] < '0' || argv[1][i] > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+
+	for (i = 0; argv[2][i]; i++)
+		if (argv[2][i] < '0' || argv[2][i] > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+
 	num1 = atol(argv[1]);
 
 	num2 = atol(argv[2]);
 
 	result = num1 * num2;
 
-	printf("%lu\n", result);
+	printf("%ld\n", result);
 
 	return (0);
 }

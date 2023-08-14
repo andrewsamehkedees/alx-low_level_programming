@@ -1,3 +1,4 @@
+#define DOG_H
 /**
  * struct dog - a new type names dog0
  * @name: name

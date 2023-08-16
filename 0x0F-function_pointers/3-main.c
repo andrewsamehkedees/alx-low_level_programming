@@ -6,7 +6,7 @@
  * main - performs simple operations
  * @argc: the number of arguments
  * @argv: the arguments
- * Return: 0 or 98 or 99
+ * Return: 0 or 98 or 99 or 100
  */
 int main(int argc, char *argv[])
 {
@@ -27,6 +27,13 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(99);
+	}
+
+	if ((*argv[2] == '/' && num2 == 0) ||
+	    (*argv[2] == '%' && num2 == 0))
+	{
+		printf("Error\n");
+		exit(100);
 	}
 
 	result = op_func(num1, num2);

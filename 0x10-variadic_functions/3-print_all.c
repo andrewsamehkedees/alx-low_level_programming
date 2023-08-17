@@ -20,22 +20,22 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				printf("%s%c", "", va_arg(args, int));
 				printed = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
+				printf("%s%d", "", va_arg(args, int));
 				printed = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				printf("%s%f", "", va_arg(args, double));
 				printed = 1;
 				break;
 			case 's':
 				str = va_arg(args, char *);
 				if (str == NULL)
 					str = "(nil)";
-				printf("%s", str);
+				printf("%s%s", "", str);
 				printed = 1;
 				break;
 		}

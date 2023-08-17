@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 	char *str;
 	int printed = 0;
+	char *separator = ", ";
 
 	va_start(args, format);
 	while (format && format[i])
@@ -39,7 +40,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		if (format[i + 1] && printed)
-			printf(", ");
+			printf("%s", separator);
 		i++;
 	}
 	printf("\n");

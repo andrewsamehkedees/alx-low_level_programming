@@ -4,11 +4,10 @@
 #include "lists.h"
 
 /**
- * add_node - adds a new node at the beginning of a list_t list
+ * add_node - adds a new node at the beginning of the list
  * @head: double pointer to the head of the list
  * @str: string to be added to the new node
- *
- * Return: the address of the new element, or NULL if it failed
+ * Return: the address of the new element or NULL
  */
 list_t *add_node(list_t **head, const char *str)
 {

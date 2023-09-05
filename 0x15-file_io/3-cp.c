@@ -43,38 +43,57 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		exit(99);
 	}
-
 	while ((to_read = read(fd_from, buffer, BUFSIZE)) > 0)
 	{
 		to_write = write(fd_to, buffer, to_read);
 		if (to_write == -1)
-		{
-			dprintf(STDERR_FILENO, WRITE_ERROR, argv[2]);
-			close(fd_from);
-			close(fd_to);
-			exit(99);
-		}
+			write_error_to(fd_from, fd_to, argv[2]);
 	}
-
 	if (to_read == -1)
-	{
-		dprintf(STDERR_FILENO, READ_ERROR, argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
-	}
+		read_error_to(fd_from, fd_to, argv[1]);
 
 	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO, CLOSE_ERROR, fd_from);
-		exit(100);
-	}
+		close_error_to(fd_from);
 
 	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO, CLOSE_ERROR, fd_to);
-		exit(100);
-	}
-
+		close_error_to(fd_to);
 	return (0);
+}
+
+/**
+ * write_error_to - handles a write error
+ * @fd_from: file descriptor for the source file
+ * @fd_to: file descriptor for the destination file
+ * @filename: name of the destination file
+ */
+void write_error_to(int fd_from, int fd_to, char *filename)
+{
+	dprintf(STDERR_FILENO, WRITE_ERROR, filename);
+	close(fd_from);
+	close(fd_to);
+	exit(99);
+}
+
+/**
+ * read_error_to - handles a read error
+ * @fd_from: file descriptor for the source file
+ * @fd_to: file descriptor for the destination file
+ * @filename: name of the source file
+ */
+void read_error_to(int fd_from, int fd_to, char *filename)
+{
+	dprintf(STDERR_FILENO, READ_ERROR, filename);
+	close(fd_from);
+	close(fd_to);
+	exit(98);
+}
+
+/**
+ * close_error_to - handles a close error
+ * @fd: file descriptor that could not be closed
+ */
+void close_error_to(int fd)
+{
+	dprintf(STDERR_FILENO, CLOSE_ERROR, fd);
+	exit(100);
 }

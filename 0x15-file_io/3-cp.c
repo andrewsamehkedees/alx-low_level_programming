@@ -4,6 +4,10 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+void write_error_to(int fd_from, int fd_to, char *filename);
+void read_error_to(int fd_from, int fd_to, char *filename);
+void close_error_to(int fd);
+
 #define BUFSIZE 1024
 #define USAGE "Usage: cp file_from file_to\n"
 #define READ_ERROR "Error: Can't read from file %s\n"
